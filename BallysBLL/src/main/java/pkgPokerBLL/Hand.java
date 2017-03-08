@@ -135,8 +135,11 @@ public class Hand {
 	//TODO: Implement This Method
 	public static boolean isHandFlush(Hand h, HandScore hs)
 	{
-		hs.setHandStrength(eHandStrength.Flush);
-		hs.setHiHand(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank());
+		if(isFlush(h) == true){
+			hs.setHandStrength(eHandStrength.Flush);
+		
+			hs.setHiHand(h.getCardsInHand().get(eCardNo.FirstCard.getCardNo()).geteRank());
+			}
 		return isFlush(h);
 		
 		
